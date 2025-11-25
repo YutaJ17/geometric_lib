@@ -21,10 +21,10 @@ jobs:
         python-version: '3.11'
     - name: Run unit tests
       run: |
-        cd geometric_lib
+        cd lab4/geometric_lib
         python -m unittest test_geometry.py -v
     - name: Run tests with coverage
       run: |
-        cd geometric_lib
+        cd lab4/geometric_lib
         python -m coverage run test_geometry.py
         python -m coverage report -m
