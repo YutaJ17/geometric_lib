@@ -19,10 +19,14 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install coverage
     - name: Run unit tests
       run: |
-        python -m unittest test_geometry.py -v
+        python -m unittest test_geometry -v
     - name: Run tests with coverage
       run: |
-        python -m coverage run test_geometry.py
+        python -m coverage run -m unittest test_geometry
         python -m coverage report -m
